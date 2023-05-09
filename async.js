@@ -9,6 +9,15 @@ setTimeout(delayMessage,3000);
 // You have an array of user IDs and a function getUserData(id) that returns a Promise with user 
 //data when given a user ID. Write an asynchronous function that fetches and logs the data for 
 //each user ID one by one, in sequence.
+async function fetchUserData(ids) {
+    for (const id of ids) {
+      const userData = await getUserData(id);
+      console.log(userData);
+    }
+  }
+  const userIds = [1, 2, 3, 4, 5];
+fetchUserData(userIds);
+
 
 
 // You have an asynchronous function performTask() that returns a Promise. The Promise resolves if
